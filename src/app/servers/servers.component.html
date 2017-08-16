@@ -1,4 +1,4 @@
-<label>Server Name</label>
+<!-- <label>Server Name</label>
 
 <input 
 	type="text"
@@ -12,5 +12,17 @@
 
 <p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server> -->
+
+
+<div class="container">
+	<button class="btn btn-primary" (click)="toggle()">Display Details</button>
+	<p *ngIf="buttonClickedFlag">Secret Password</p>
+
+	<p 
+		*ngFor="let index of clicks"
+		[ngStyle]="{backgroundColor: getBackground(index)}"
+		[ngClass]="{'white-text': atLeastFive(index)}">
+		{{index}}
+	</p>
+</div>
